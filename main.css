@@ -1,0 +1,93 @@
+/* In .css Dateien kann die Struktur/Format für alle html Dateien gesetzt werden
+z.B. wenn in 2 verschiedenen .html Dateien dieselbe .css Datei referenziert wird haben diese dieselbe Formatierung 
+*/ 
+
+/*mit * spricht man alle elemente an*/
+
+*{
+    /* reset to default */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans' , sans-serif;
+}
+
+
+.header{
+    background-color: rgb(180, 25, 25, 255);
+    width: 100%;
+    padding: 16px;
+}
+
+a{
+    text-decoration: none;
+}
+
+.link{
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+}
+
+ul{
+    list-style-type: none;  /* Aufzählungszeichen */
+
+}
+.header__list{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.active{
+    border-bottom: 2px solid white;
+}
+
+.header__icon-container{
+    display: none;
+}
+
+.header__icon-container .icon__span{
+    width: 20px;
+    height: 2px;
+    background-color: white;
+}
+.header__icon-container .middle{
+    margin: 3px 0;
+}
+
+
+.sidebar{
+    display: none;
+    background-color: rgb(235, 55, 55, 245);
+    width: 100%;
+    padding: 25px;
+}
+
+.sidebar__list-item{
+    padding: 10px;
+    text-align: center;
+}
+
+
+@media only screen and (max-width:700px){
+    .header__icon-container{
+        display: block;
+        display: grid;
+        justify-content: end;
+    }
+    .header__list{
+        display: none;
+    }
+    .sidebar{
+        display: block;
+        height: 0px;
+        padding: 0;
+        transition-duration: 500ms;
+    }
+}
+
+.show{
+    padding: 0px;
+    height: 100%;
+}
